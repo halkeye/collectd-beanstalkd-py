@@ -6,6 +6,6 @@
         Host "127.0.0.1"
         Port "11300"
         # only monitor tubes where tubename start with the following prefixes
-        tubes_prefix "inventory default"
+        tubes_prefix "inventory" "default"
     </Module>
 </Plugin>

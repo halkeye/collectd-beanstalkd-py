@@ -34,6 +34,8 @@ class Beanstalk(object):
         for cmd in ('put', 'reserve-with-timeout', 'delete'):
             self.submit('counter', cmd, srv_stats['cmd-%s' % cmd])
         self.submit('counter', 'total_jobs', srv_stats['total-jobs'])
+        self.submit('counter', 'current_tubes', srv_stats['current_tubes'])
+        self.submit('counter', 'connections', srv_stats['connections'])
         for tube in conn.tubes():
             for prefix in self.tubes_prefix:
                 if tube.startswith(prefix):
